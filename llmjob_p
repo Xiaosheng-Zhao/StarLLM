@@ -1,0 +1,11 @@
+#!/bin/bash
+#PBS -N starllm_clip
+#PBS -lselect=1:ncpus=2:mem=30gb:ngpus=1
+#PBS -j oe            
+#PBS -o /scratch/zxs/scripts/starllm/back2/AstroCLIP/log/
+
+cd /scratch/zxs/scripts/starllm/back2/AstroCLIP/
+
+#astroclip/trainer.py fit -c config/specformer.yaml
+#astroclip/trainer.py fit -c config/imagespec.yaml
+astroclip/trainer.py fit -c config/astroclip.yaml

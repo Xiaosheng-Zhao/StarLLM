@@ -1,0 +1,40 @@
+/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/dinov2/layers/swiglu_ffn.py:43: UserWarning: xFormers is available (SwiGLU)
+  warnings.warn("xFormers is available (SwiGLU)")
+/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/dinov2/layers/attention.py:27: UserWarning: xFormers is available (Attention)
+  warnings.warn("xFormers is available (Attention)")
+/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/dinov2/layers/block.py:33: UserWarning: xFormers is available (Block)
+  warnings.warn("xFormers is available (Block)")
+Global seed set to 42
+wandb: Currently logged in as: xiaosheng_zhao. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.17.4
+wandb: Run data is saved locally in /scratch/zxs/scripts/starllm/back2/AstroCLIP/astroclip/outputs/wandb/run-20240716_134022-ywjix9g0
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run apricot-sun-2
+wandb: ⭐️ View project at https://wandb.ai/xiaosheng_zhao/astroclip-alignment
+wandb: 🚀 View run at https://wandb.ai/xiaosheng_zhao/astroclip-alignment/runs/ywjix9g0
+/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/utilities/parsing.py:263: UserWarning: Attribute 'image_encoder' is an instance of `nn.Module` and is already saved during checkpointing. It is recommended to ignore them using `self.save_hyperparameters(ignore=['image_encoder'])`.
+  rank_zero_warn(
+/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/utilities/parsing.py:263: UserWarning: Attribute 'spectrum_encoder' is an instance of `nn.Module` and is already saved during checkpointing. It is recommended to ignore them using `self.save_hyperparameters(ignore=['spectrum_encoder'])`.
+  rank_zero_warn(
+GPU available: True (cuda), used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/trainer/setup.py:176: PossibleUserWarning: GPU available but not used. Set `accelerator` and `devices` using `Trainer(accelerator='gpu', devices=1)`.
+  rank_zero_warn(
+
+  | Name             | Type         | Params
+--------------------------------------------------
+0 | image_encoder    | ImageHead    | 55.2 M
+1 | spectrum_encoder | SpectrumHead | 55.2 M
+2 | criterion        | CLIPLoss     | 0     
+--------------------------------------------------
+24.1 M    Trainable params
+86.4 M    Non-trainable params
+110 M     Total params
+441.989   Total estimated model params size (MB)
+Sanity Checking: 0it [00:00, ?it/s]/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/utilities/data.py:110: UserWarning: Total length of `DataLoader` across ranks is zero. Please make sure this was your intention.
+  rank_zero_warn(
+                                   /home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py:1609: PossibleUserWarning: The number of training batches (3) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a lower value for log_every_n_steps if you want to see logs for the training epoch.
+  rank_zero_warn(
+Training: 0it [00:00, ?it/s]Training:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 0:   0%|          | 0/3 [00:00<?, ?it/s] =>> PBS: job killed: mem 22179796kb exceeded limit 20971520kb

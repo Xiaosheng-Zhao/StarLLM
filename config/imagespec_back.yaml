@@ -1,0 +1,60 @@
+seed_everything: 42
+trainer:
+  default_root_dir: "{ASTROCLIP_ROOT}/outputs"
+  enable_checkpointing: true
+  gradient_clip_val: 1.
+  max_steps: 5 #500_000
+  precision: 32 #null
+  limit_val_batches: 100
+  accelerator: 'gpu' #new
+  devices: 1 #new
+  callbacks:
+    - class_path: LearningRateMonitor
+      init_args:
+        logging_interval: "step"
+    - class_path: ModelCheckpoint
+      init_args:
+        save_last: True #link
+    # TODO: This needs to be updated with latest code
+    #- class_path: PlotsCallback
+  logger:
+    class_path: CustomWandbLogger
+    init_args:
+      project: "astroclip-spectrum"
+      entity: "{WANDB_ENTITY_NAME}"
+      save_dir: ${trainer.default_root_dir}
+model:
+  class_path: ImgSpecFormer
+  init_args:
+    input_dim: 22
+    embed_dim: 768
+    num_layers: 2 #6
+    num_heads: 2 #6
+    max_len: 400 #800
+    dropout: 0.
+    mask_num_chunks: 2 #new
+    mask_chunk_width: 4 #new
+    slice_section_length: 20 #new
+    slice_overlap: 10 #new
+data:
+  class_path: AstroClipDataloader
+  init_args:
+    path: "{ASTROCLIP_ROOT}/datasets/astroclip_file6"
+    columns:
+      - images #spectrum
+    batch_size: 64
+    num_workers: 0
+optimizer:
+  class_path: torch.optim.adamw.AdamW
+  init_args:
+    lr: 1e-6 #1e-5
+    weight_decay: 1e-2 #1e-1
+    betas:
+      - 0.9
+      - 0.95
+lr_scheduler:
+  class_path: CosineAnnealingWithWarmupLR
+  init_args:
+    T_max: ${trainer.max_steps}
+    T_warmup: 2 #2000
+    eta_min: ${eval:'${optimizer.init_args.lr}//100'}

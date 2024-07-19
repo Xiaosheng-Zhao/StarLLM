@@ -1,0 +1,15 @@
+astropy
+datasets
+#dinov2 @ git+https://github.com/facebookresearch/dinov2.git@2302b6bf46953431b969155307b9bed152754069
+dinov2 @ git+https://github.com/Xiaosheng-Zhao/dinov2.git
+huggingface_hub
+jaxtyping
+lightning[extra]
+plotly
+provabgs @ git+https://github.com/changhoonhahn/provabgs.git
+pyro-ppl
+python-dotenv
+scikit-image
+scikit-learn
+torchvision==0.15.1
+wandb

@@ -1,0 +1,52 @@
+/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/dinov2/layers/swiglu_ffn.py:43: UserWarning: xFormers is available (SwiGLU)
+  warnings.warn("xFormers is available (SwiGLU)")
+/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/dinov2/layers/attention.py:27: UserWarning: xFormers is available (Attention)
+  warnings.warn("xFormers is available (Attention)")
+/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/dinov2/layers/block.py:33: UserWarning: xFormers is available (Block)
+  warnings.warn("xFormers is available (Block)")
+Global seed set to 42
+wandb: Currently logged in as: xiaosheng_zhao. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.17.4
+wandb: Run data is saved locally in /scratch/zxs/scripts/starllm/back2/AstroCLIP/astroclip/outputs/wandb/run-20240716_140456-l7k7yil5
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run logical-bee-45
+wandb: ⭐️ View project at https://wandb.ai/xiaosheng_zhao/astroclip-spectrum
+wandb: 🚀 View run at https://wandb.ai/xiaosheng_zhao/astroclip-spectrum/runs/l7k7yil5
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [9]
+
+  | Name            | Type       | Params
+-----------------------------------------------
+0 | data_embed      | Linear     | 17.7 K
+1 | position_embed  | Embedding  | 307 K 
+2 | dropout         | Dropout    | 0     
+3 | blocks          | ModuleList | 14.2 M
+4 | final_layernorm | LayerNorm  | 1.5 K 
+5 | head            | Linear     | 16.9 K
+-----------------------------------------------
+14.5 M    Trainable params
+0         Non-trainable params
+14.5 M    Total params
+58.076    Total estimated model params size (MB)
+Sanity Checking: 0it [00:00, ?it/s]/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/trainer/connectors/data_connector.py:224: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 80 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+Sanity Checking:   0%|          | 0/1 [00:00<?, ?it/s]Sanity Checking DataLoader 0:   0%|          | 0/1 [00:00<?, ?it/s]torch.Size([64, 49, 22])
+Sanity Checking DataLoader 0: 100%|██████████| 1/1 [00:00<00:00,  2.21it/s]                                                                           /home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/trainer/connectors/data_connector.py:224: PossibleUserWarning: The dataloader, train_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 80 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py:1609: PossibleUserWarning: The number of training batches (15) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a lower value for log_every_n_steps if you want to see logs for the training epoch.
+  rank_zero_warn(
+Training: 0it [00:00, ?it/s]Training:   0%|          | 0/16 [00:00<?, ?it/s]Epoch 0:   0%|          | 0/16 [00:00<?, ?it/s] torch.Size([64, 49, 22])
+Epoch 0:   6%|▋         | 1/16 [00:01<00:15,  1.03s/it]Epoch 0:   6%|▋         | 1/16 [00:01<00:15,  1.03s/it, loss=2.84, v_num=yil5, training_loss=2.840]torch.Size([64, 49, 22])
+Epoch 0:  12%|█▎        | 2/16 [00:02<00:14,  1.02s/it, loss=2.84, v_num=yil5, training_loss=2.840]Epoch 0:  12%|█▎        | 2/16 [00:02<00:14,  1.02s/it, loss=2.83, v_num=yil5, training_loss=2.820]torch.Size([64, 49, 22])
+Epoch 0:  19%|█▉        | 3/16 [00:03<00:13,  1.02s/it, loss=2.83, v_num=yil5, training_loss=2.820]Epoch 0:  19%|█▉        | 3/16 [00:03<00:13,  1.02s/it, loss=2.83, v_num=yil5, training_loss=2.830]torch.Size([64, 49, 22])
+Epoch 0:  25%|██▌       | 4/16 [00:04<00:12,  1.02s/it, loss=2.83, v_num=yil5, training_loss=2.830]Epoch 0:  25%|██▌       | 4/16 [00:04<00:12,  1.02s/it, loss=2.79, v_num=yil5, training_loss=2.660]torch.Size([64, 49, 22])
+Epoch 0:  31%|███▏      | 5/16 [00:05<00:11,  1.02s/it, loss=2.79, v_num=yil5, training_loss=2.660]Epoch 0:  31%|███▏      | 5/16 [00:05<00:11,  1.02s/it, loss=2.73, v_num=yil5, training_loss=2.520]Epoch 0:  31%|███▏      | 5/16 [00:05<00:11,  1.02s/it, loss=2.73, v_num=yil5, training_loss=2.520]`Trainer.fit` stopped: `max_steps=5` reached.
+Epoch 0:  31%|███▏      | 5/16 [00:05<00:12,  1.18s/it, loss=2.73, v_num=yil5, training_loss=2.520]
+wandb: - 0.010 MB of 0.010 MB uploadedwandb: \ 0.010 MB of 0.010 MB uploadedwandb: | 0.010 MB of 0.010 MB uploadedwandb: / 0.010 MB of 0.010 MB uploadedwandb: - 0.010 MB of 0.011 MB uploadedwandb: \ 0.018 MB of 0.018 MB uploadedwandb: 🚀 View run logical-bee-45 at: https://wandb.ai/xiaosheng_zhao/astroclip-spectrum/runs/l7k7yil5
+wandb: ⭐️ View project at: https://wandb.ai/xiaosheng_zhao/astroclip-spectrum
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./astroclip/outputs/wandb/run-20240716_140456-l7k7yil5/logs
+wandb: WARNING The new W&B backend becomes opt-out in version 0.18.0; try it out with `wandb.require("core")`! See https://wandb.me/wandb-core for more information.

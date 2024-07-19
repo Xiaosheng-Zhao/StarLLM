@@ -1,0 +1,284 @@
+/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/dinov2/layers/swiglu_ffn.py:43: UserWarning: xFormers is available (SwiGLU)
+  warnings.warn("xFormers is available (SwiGLU)")
+/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/dinov2/layers/attention.py:27: UserWarning: xFormers is available (Attention)
+  warnings.warn("xFormers is available (Attention)")
+/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/dinov2/layers/block.py:33: UserWarning: xFormers is available (Block)
+  warnings.warn("xFormers is available (Block)")
+Global seed set to 42
+wandb: Currently logged in as: xiaosheng_zhao. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.17.4
+wandb: Run data is saved locally in /scratch/zxs/scripts/starllm/back2/AstroCLIP/astroclip/outputs/wandb/run-20240716_142123-vi0ua5db
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run driven-dream-8
+wandb: ⭐️ View project at https://wandb.ai/xiaosheng_zhao/astroclip-alignment
+wandb: 🚀 View run at https://wandb.ai/xiaosheng_zhao/astroclip-alignment/runs/vi0ua5db
+/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/utilities/parsing.py:263: UserWarning: Attribute 'image_encoder' is an instance of `nn.Module` and is already saved during checkpointing. It is recommended to ignore them using `self.save_hyperparameters(ignore=['image_encoder'])`.
+  rank_zero_warn(
+/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/utilities/parsing.py:263: UserWarning: Attribute 'spectrum_encoder' is an instance of `nn.Module` and is already saved during checkpointing. It is recommended to ignore them using `self.save_hyperparameters(ignore=['spectrum_encoder'])`.
+  rank_zero_warn(
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [9]
+
+  | Name             | Type         | Params
+--------------------------------------------------
+0 | image_encoder    | ImageHead    | 26.6 M
+1 | spectrum_encoder | SpectrumHead | 55.2 M
+2 | criterion        | CLIPLoss     | 0     
+--------------------------------------------------
+24.1 M    Trainable params
+57.7 M    Non-trainable params
+81.8 M    Total params
+327.355   Total estimated model params size (MB)
+Sanity Checking: 0it [00:00, ?it/s]/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/utilities/data.py:110: UserWarning: Total length of `DataLoader` across ranks is zero. Please make sure this was your intention.
+  rank_zero_warn(
+                                   /home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py:1609: PossibleUserWarning: The number of training batches (3) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a lower value for log_every_n_steps if you want to see logs for the training epoch.
+  rank_zero_warn(
+Training: 0it [00:00, ?it/s]Training:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 0:   0%|          | 0/3 [00:00<?, ?it/s] Epoch 0:  33%|███▎      | 1/3 [00:29<00:59, 29.99s/it]Epoch 0:  33%|███▎      | 1/3 [00:29<00:59, 29.99s/it, loss=5.56, v_num=a5db]Epoch 0:  67%|██████▋   | 2/3 [00:30<00:15, 15.46s/it, loss=5.56, v_num=a5db]Epoch 0:  67%|██████▋   | 2/3 [00:30<00:15, 15.46s/it, loss=5.56, v_num=a5db]/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/torch/autograd/__init__.py:200: UserWarning: Error detected in LogSoftmaxBackward0. Traceback of forward call that caused the error:
+  File "/scratch/zxs/scripts/starllm/back2/AstroCLIP/astroclip/trainer.py", line 59, in <module>
+    main_cli(run=True)
+  File "/scratch/zxs/scripts/starllm/back2/AstroCLIP/astroclip/trainer.py", line 48, in main_cli
+    cli = WrappedLightningCLI(
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/cli.py", line 358, in __init__
+    self._run_subcommand(self.subcommand)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/cli.py", line 670, in _run_subcommand
+    fn(**fn_kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 608, in fit
+    call._call_and_handle_interrupt(
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/trainer/call.py", line 38, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 650, in _fit_impl
+    self._run(model, ckpt_path=self.ckpt_path)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 1112, in _run
+    results = self._run_stage()
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 1191, in _run_stage
+    self._run_train()
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 1214, in _run_train
+    self.fit_loop.run()
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/loop.py", line 199, in run
+    self.advance(*args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/fit_loop.py", line 267, in advance
+    self._outputs = self.epoch_loop.run(self._data_fetcher)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/loop.py", line 199, in run
+    self.advance(*args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/epoch/training_epoch_loop.py", line 213, in advance
+    batch_output = self.batch_loop.run(kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/loop.py", line 199, in run
+    self.advance(*args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/batch/training_batch_loop.py", line 88, in advance
+    outputs = self.optimizer_loop.run(optimizers, kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/loop.py", line 199, in run
+    self.advance(*args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/optimization/optimizer_loop.py", line 202, in advance
+    result = self._run_optimization(kwargs, self._optimizers[self.optim_progress.optimizer_position])
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/optimization/optimizer_loop.py", line 249, in _run_optimization
+    self._optimizer_step(optimizer, opt_idx, kwargs.get("batch_idx", 0), closure)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/optimization/optimizer_loop.py", line 370, in _optimizer_step
+    self.trainer._call_lightning_module_hook(
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 1356, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/core/module.py", line 1742, in optimizer_step
+    optimizer.step(closure=optimizer_closure)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/core/optimizer.py", line 169, in step
+    step_output = self._strategy.optimizer_step(self._optimizer, self._optimizer_idx, closure, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/strategies/strategy.py", line 234, in optimizer_step
+    return self.precision_plugin.optimizer_step(
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/plugins/precision/precision_plugin.py", line 119, in optimizer_step
+    return optimizer.step(closure=closure, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/torch/optim/lr_scheduler.py", line 69, in wrapper
+    return wrapped(*args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/torch/optim/optimizer.py", line 280, in wrapper
+    out = func(*args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/torch/optim/optimizer.py", line 33, in _use_grad
+    ret = func(self, *args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/torch/optim/adamw.py", line 148, in step
+    loss = closure()
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/plugins/precision/precision_plugin.py", line 105, in _wrap_closure
+    closure_result = closure()
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/optimization/optimizer_loop.py", line 149, in __call__
+    self._result = self.closure(*args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/optimization/optimizer_loop.py", line 135, in closure
+    step_output = self._step_fn()
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/optimization/optimizer_loop.py", line 419, in _training_step
+    training_step_output = self.trainer._call_strategy_hook("training_step", *kwargs.values())
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 1494, in _call_strategy_hook
+    output = fn(*args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/strategies/strategy.py", line 378, in training_step
+    return self.model.training_step(*args, **kwargs)
+  File "/scratch/zxs/scripts/starllm/back2/AstroCLIP/astroclip/models/astroclip.py", line 82, in training_step
+    loss_withlogit = self.criterion(
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scratch/zxs/scripts/starllm/back2/AstroCLIP/astroclip/models/astroclip.py", line 152, in forward
+    + F.cross_entropy(logits_per_spectrum, labels)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/torch/nn/functional.py", line 3029, in cross_entropy
+    return torch._C._nn.cross_entropy_loss(input, target, weight, _Reduction.get_enum(reduction), ignore_index, label_smoothing)
+ (Triggered internally at ../torch/csrc/autograd/python_anomaly_mode.cpp:114.)
+  Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+Traceback (most recent call last):
+  File "/scratch/zxs/scripts/starllm/back2/AstroCLIP/astroclip/trainer.py", line 59, in <module>
+    main_cli(run=True)
+  File "/scratch/zxs/scripts/starllm/back2/AstroCLIP/astroclip/trainer.py", line 48, in main_cli
+    cli = WrappedLightningCLI(
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/cli.py", line 358, in __init__
+    self._run_subcommand(self.subcommand)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/cli.py", line 670, in _run_subcommand
+    fn(**fn_kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 608, in fit
+    call._call_and_handle_interrupt(
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/trainer/call.py", line 38, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 650, in _fit_impl
+    self._run(model, ckpt_path=self.ckpt_path)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 1112, in _run
+    results = self._run_stage()
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 1191, in _run_stage
+    self._run_train()
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 1214, in _run_train
+    self.fit_loop.run()
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/loop.py", line 199, in run
+    self.advance(*args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/fit_loop.py", line 267, in advance
+    self._outputs = self.epoch_loop.run(self._data_fetcher)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/loop.py", line 199, in run
+    self.advance(*args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/epoch/training_epoch_loop.py", line 213, in advance
+    batch_output = self.batch_loop.run(kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/loop.py", line 199, in run
+    self.advance(*args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/batch/training_batch_loop.py", line 88, in advance
+    outputs = self.optimizer_loop.run(optimizers, kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/loop.py", line 199, in run
+    self.advance(*args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/optimization/optimizer_loop.py", line 202, in advance
+    result = self._run_optimization(kwargs, self._optimizers[self.optim_progress.optimizer_position])
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/optimization/optimizer_loop.py", line 249, in _run_optimization
+    self._optimizer_step(optimizer, opt_idx, kwargs.get("batch_idx", 0), closure)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/optimization/optimizer_loop.py", line 370, in _optimizer_step
+    self.trainer._call_lightning_module_hook(
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 1356, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/core/module.py", line 1742, in optimizer_step
+    optimizer.step(closure=optimizer_closure)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/core/optimizer.py", line 169, in step
+    step_output = self._strategy.optimizer_step(self._optimizer, self._optimizer_idx, closure, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/strategies/strategy.py", line 234, in optimizer_step
+    return self.precision_plugin.optimizer_step(
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/plugins/precision/precision_plugin.py", line 119, in optimizer_step
+    return optimizer.step(closure=closure, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/torch/optim/lr_scheduler.py", line 69, in wrapper
+    return wrapped(*args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/torch/optim/optimizer.py", line 280, in wrapper
+    out = func(*args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/torch/optim/optimizer.py", line 33, in _use_grad
+    ret = func(self, *args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/torch/optim/adamw.py", line 148, in step
+    loss = closure()
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/plugins/precision/precision_plugin.py", line 105, in _wrap_closure
+    closure_result = closure()
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/optimization/optimizer_loop.py", line 149, in __call__
+    self._result = self.closure(*args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/optimization/optimizer_loop.py", line 144, in closure
+    self._backward_fn(step_output.closure_loss)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/optimization/optimizer_loop.py", line 305, in backward_fn
+    self.trainer._call_strategy_hook("backward", loss, optimizer, opt_idx)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 1494, in _call_strategy_hook
+    output = fn(*args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/strategies/strategy.py", line 207, in backward
+    self.precision_plugin.backward(closure_loss, self.lightning_module, optimizer, optimizer_idx, *args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/plugins/precision/precision_plugin.py", line 67, in backward
+    model.backward(tensor, optimizer, optimizer_idx, *args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/core/module.py", line 1486, in backward
+    loss.backward(*args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/torch/_tensor.py", line 487, in backward
+    torch.autograd.backward(
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/torch/autograd/__init__.py", line 200, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: Function 'LogSoftmaxBackward0' returned nan values in its 0th output.
+Traceback (most recent call last):
+  File "/scratch/zxs/scripts/starllm/back2/AstroCLIP/astroclip/trainer.py", line 59, in <module>
+    main_cli(run=True)
+  File "/scratch/zxs/scripts/starllm/back2/AstroCLIP/astroclip/trainer.py", line 48, in main_cli
+    cli = WrappedLightningCLI(
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/cli.py", line 358, in __init__
+    self._run_subcommand(self.subcommand)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/cli.py", line 670, in _run_subcommand
+    fn(**fn_kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 608, in fit
+    call._call_and_handle_interrupt(
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/trainer/call.py", line 38, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 650, in _fit_impl
+    self._run(model, ckpt_path=self.ckpt_path)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 1112, in _run
+    results = self._run_stage()
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 1191, in _run_stage
+    self._run_train()
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 1214, in _run_train
+    self.fit_loop.run()
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/loop.py", line 199, in run
+    self.advance(*args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/fit_loop.py", line 267, in advance
+    self._outputs = self.epoch_loop.run(self._data_fetcher)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/loop.py", line 199, in run
+    self.advance(*args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/epoch/training_epoch_loop.py", line 213, in advance
+    batch_output = self.batch_loop.run(kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/loop.py", line 199, in run
+    self.advance(*args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/batch/training_batch_loop.py", line 88, in advance
+    outputs = self.optimizer_loop.run(optimizers, kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/loop.py", line 199, in run
+    self.advance(*args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/optimization/optimizer_loop.py", line 202, in advance
+    result = self._run_optimization(kwargs, self._optimizers[self.optim_progress.optimizer_position])
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/optimization/optimizer_loop.py", line 249, in _run_optimization
+    self._optimizer_step(optimizer, opt_idx, kwargs.get("batch_idx", 0), closure)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/optimization/optimizer_loop.py", line 370, in _optimizer_step
+    self.trainer._call_lightning_module_hook(
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 1356, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/core/module.py", line 1742, in optimizer_step
+    optimizer.step(closure=optimizer_closure)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/core/optimizer.py", line 169, in step
+    step_output = self._strategy.optimizer_step(self._optimizer, self._optimizer_idx, closure, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/strategies/strategy.py", line 234, in optimizer_step
+    return self.precision_plugin.optimizer_step(
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/plugins/precision/precision_plugin.py", line 119, in optimizer_step
+    return optimizer.step(closure=closure, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/torch/optim/lr_scheduler.py", line 69, in wrapper
+    return wrapped(*args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/torch/optim/optimizer.py", line 280, in wrapper
+    out = func(*args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/torch/optim/optimizer.py", line 33, in _use_grad
+    ret = func(self, *args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/torch/optim/adamw.py", line 148, in step
+    loss = closure()
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/plugins/precision/precision_plugin.py", line 105, in _wrap_closure
+    closure_result = closure()
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/optimization/optimizer_loop.py", line 149, in __call__
+    self._result = self.closure(*args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/optimization/optimizer_loop.py", line 144, in closure
+    self._backward_fn(step_output.closure_loss)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/loops/optimization/optimizer_loop.py", line 305, in backward_fn
+    self.trainer._call_strategy_hook("backward", loss, optimizer, opt_idx)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 1494, in _call_strategy_hook
+    output = fn(*args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/strategies/strategy.py", line 207, in backward
+    self.precision_plugin.backward(closure_loss, self.lightning_module, optimizer, optimizer_idx, *args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/plugins/precision/precision_plugin.py", line 67, in backward
+    model.backward(tensor, optimizer, optimizer_idx, *args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/lightning/pytorch/core/module.py", line 1486, in backward
+    loss.backward(*args, **kwargs)
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/torch/_tensor.py", line 487, in backward
+    torch.autograd.backward(
+  File "/home/zxs/.conda/envs/starllm2/lib/python3.10/site-packages/torch/autograd/__init__.py", line 200, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: Function 'LogSoftmaxBackward0' returned nan values in its 0th output.
+wandb: - 0.010 MB of 0.010 MB uploadedwandb: \ 0.010 MB of 0.010 MB uploadedwandb: | 0.010 MB of 0.010 MB uploadedwandb: / 0.010 MB of 0.011 MB uploadedwandb: - 0.037 MB of 0.037 MB uploadedwandb: \ 0.037 MB of 0.037 MB uploadedwandb: 🚀 View run driven-dream-8 at: https://wandb.ai/xiaosheng_zhao/astroclip-alignment/runs/vi0ua5db
+wandb: ⭐️ View project at: https://wandb.ai/xiaosheng_zhao/astroclip-alignment
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./astroclip/outputs/wandb/run-20240716_142123-vi0ua5db/logs
+wandb: WARNING The new W&B backend becomes opt-out in version 0.18.0; try it out with `wandb.require("core")`! See https://wandb.me/wandb-core for more information.
