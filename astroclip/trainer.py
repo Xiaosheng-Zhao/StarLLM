@@ -1,11 +1,14 @@
 #!/usr/bin/env python
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "9"
+#os.environ["CUDA_VISIBLE_DEVICES"] = "9"
 
 from typing import Any, Optional
 
 import matplotlib.pyplot as plt
 import wandb
+
+wandb.init(mode="disabled")
+
 from lightning import Callback, LightningModule, Trainer
 from lightning.pytorch.cli import (
     ArgsType,
