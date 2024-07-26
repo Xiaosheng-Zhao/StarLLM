@@ -24,6 +24,7 @@ class AstroClipDataloader(L.LightningDataModule):
         self.save_hyperparameters()
 
     def setup(self, stage: str) -> None:
+        print (self.hparams.path)
         self.dataset = datasets.load_from_disk(self.hparams.path)
         self.dataset.set_format(type="torch", columns=self.hparams.columns)
         #print (self.dataset)
